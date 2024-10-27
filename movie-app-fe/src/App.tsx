@@ -1,6 +1,10 @@
+import Navbar from "./components";
+
 function App() {
   return(
-    <div className="bg-red-400">App</div>
+    <div className="">
+      <Navbar/>
+    </div>
   );
 }
 
