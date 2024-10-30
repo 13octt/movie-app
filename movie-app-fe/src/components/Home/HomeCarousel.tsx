@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FiThumbsUp } from "react-icons/fi";
-import axios from 'axios'
 import { imagepath } from '../../utils/constant';
 import { baseApi } from '../../api/axiosInstance';
 
