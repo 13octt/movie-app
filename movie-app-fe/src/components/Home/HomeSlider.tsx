@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react'
 import HomeCarousel from './HomeCarousel';
 import { baseApi } from '../../api/axiosInstance';
 import { CarouselMovie } from '../../utils/constant';
+import HomeCarouselList from './HomeCarouselList';
 
 function HomeSlider() {
 
     const [carouselMovies, setCarouselMovies] = useState<CarouselMovie[]>([])
+    const [nextMovie, setNextMovie] = useState<number[]>([1, 2, 3])
 
     const fetchUpcoming = async () => {
         try {
@@ -23,18 +25,17 @@ function HomeSlider() {
     }, [])
 
     return (
-        <div className='relative w-[900px]'>
+        <div className="row">
+            <div className='relative col-8'>
 
-            <div id="carouselExample" className="carousel slide">
-                <HomeCarousel carouselMovies={carouselMovies} />
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
+                <div id="carouselExample" className="carousel slide">
+                    <HomeCarousel carouselMovies={carouselMovies} />
+
+                </div>
+            </div>
+
+            <div className="col-4">
+                <HomeCarouselList next = {nextMovie} carouselMovies={carouselMovies} />
             </div>
         </div>
     )
