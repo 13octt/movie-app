@@ -1,5 +1,3 @@
-
-
 function Navbar() {
     return (
         <nav className="bg-[#121212] py-2">
