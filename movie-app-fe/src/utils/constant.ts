@@ -17,7 +17,6 @@ export interface MovieCardType {
     original_language: string;
 }
 
-// export const Category = ["Now Playing", "Popular", "Top Rated", "Upcomming"]
 export interface CategoryType {
     name: string;
     path: string;
@@ -27,5 +26,5 @@ export const category = [
     { name: "Now Playing", path: "now_playing" },
     { name: "Popular", path: "popular" },
     { name: "Top Rated", path: "top_rated" },
-    { name: "Upcomming", path: "upcoming" }
+    { name: "Upcoming", path: "upcoming" }
 ]
