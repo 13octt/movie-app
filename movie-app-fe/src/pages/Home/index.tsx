@@ -3,6 +3,7 @@ import HomeSlider from '../../components/Home/HomeSlider'
 import { baseApi } from '../../api/axiosInstance'
 import { MovieCardType } from '../../utils/constant'
 import MovieList from '../../components/Home/MovieList'
+import LoadMoreBtn from '../../components/Button/LoadMoreBtn'
 
 function Home() {
 	const [movies, setMovies] = useState<MovieCardType[]>([])
@@ -21,9 +22,10 @@ function Home() {
 	}, [])
 
 	return (
-		<div className='w-[90%] mx-auto'>
+		<div className='w-[90%] mx-auto mb-44'>
 			<HomeSlider />
-			<MovieList movies={movies}/>
+			<MovieList movies={movies} />
+			<LoadMoreBtn />
 		</div>
 	)
 }
