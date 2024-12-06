@@ -1,9 +1,9 @@
 import { imagepath } from '../../utils/constant';
-import { CarouselMovie } from '../../utils/constant'
+import { CarouselMovieType } from '../../utils/constant'
 import { FiThumbsUp } from "react-icons/fi";
 
 interface HomeCarouselProps {
-    carouselMovies: CarouselMovie[];
+    carouselMovies: CarouselMovieType[];
 }
 
 function HomeCarousel({ carouselMovies }: HomeCarouselProps) {

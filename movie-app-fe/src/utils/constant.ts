@@ -1,6 +1,6 @@
 export const imagepath = "https://image.tmdb.org/t/p/original"
 
-export interface CarouselMovie {
+export interface CarouselMovieType {
     backdrop_path: string;
     poster_path: string;
     title: string;
@@ -8,7 +8,7 @@ export interface CarouselMovie {
     vote_count: string;
 }
 
-export interface MovieCard {
+export interface MovieCardType {
     id: number;
     poster_path: string;
     release_date: string;
