@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import HomeSlider from '../../components/Home/HomeSlider'
 import { baseApi } from '../../api/axiosInstance'
+import { movieCard } from '../../utils/constant'
+import MovieList from '../../components/Home/MovieList'
 
 function Home() {
-	const [movies, setMovies] = useState([])
+	const [movies, setMovies] = useState<movieCard[]>([])
 	const fetchMovies = async () => {
 		try {
 			const response = await baseApi.get('/3/movie/top_rated?language=en-US&page=1')
@@ -16,11 +18,12 @@ function Home() {
 
 	useEffect(() => {
 		fetchMovies()
-	})
-	
+	}, [])
+
 	return (
 		<div className='w-[90%] mx-auto'>
 			<HomeSlider />
+			<MovieList movies={movies}/>
 		</div>
 	)
 }
