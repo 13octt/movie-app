@@ -1,4 +1,4 @@
-import { imagepath, MovieCardType } from "../../utils/constant";
+import { MovieCardType } from "../../utils/constant";
 import MovieCard from "./MovieCard";
 
 interface MovieListProps {

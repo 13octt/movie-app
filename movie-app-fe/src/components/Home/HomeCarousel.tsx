@@ -17,6 +17,7 @@ function HomeCarousel({ carouselMovies }: HomeCarouselProps) {
                             <div>
                                 <div className="relative ">
                                     <img src={imagepath + movie?.backdrop_path} className='w-full aspect-[7/4]' alt="" />
+                                    <div className={`absolute w-full h-full top-0 left-0 bg-black opacity-[0.1] hover:opacity-[0.2] `}></div>
                                     <div className="absolute bottom-0 h-24 w-full _carouselGradient"></div>
                                 </div>
                                 <div className="absolute bottom-0 flex px-4 gap-4 items-end">
