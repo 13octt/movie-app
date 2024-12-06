@@ -16,3 +16,5 @@ export interface MovieCardType {
     vote_average: number;
     original_language: string;
 }
+
+export const Category = ["Now Playing", "Popular", "Top Rated", "Upcomming"]

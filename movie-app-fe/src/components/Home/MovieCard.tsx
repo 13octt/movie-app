@@ -10,7 +10,7 @@ function MovieCard({ movieData }: MovieCardProps) {
     const [hover, setHover] = useState<number | null>(null)
 
     useEffect(() => {
-        console.log("Hover item", hover)
+        // console.log("Hover item", hover)
     })
 
     return (
