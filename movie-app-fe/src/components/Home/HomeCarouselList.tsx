@@ -8,13 +8,12 @@ interface HomeCarouselListProps {
 }
 
 function HomeCarouselList({ next, carouselMovies }: HomeCarouselListProps) {
-    console.log(`next: ` + next)
     return (
         <div>
             <h1 className='text-yellow-500 font-bold text-xl'>Up next</h1>
             {
                 next.map((item, index) => (
-                    <div className="flex gap-2">
+                    <div key={index} className="flex gap-2">
                         <img src={imagepath + carouselMovies[item]?.poster_path} className="w-[100px]" alt="" />
                         <div className="flex flex-col justify-between py-2">
                             <div className="leading-5">

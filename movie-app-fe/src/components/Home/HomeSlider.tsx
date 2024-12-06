@@ -10,9 +10,6 @@ function HomeSlider() {
     const [nextMovie, setNextMovie] = useState<number[]>([]);
     const [selected, setSelected] = useState(0);
 
-    console.log(carouselMovies.length);
-
-
     useEffect(() => {
         if (carouselMovies.length) {
             const index1 = (selected + 1) % carouselMovies.length;
@@ -25,9 +22,9 @@ function HomeSlider() {
     useEffect(() => {
         const myCarousel = document.getElementById("carouselExample")
 
-        const handleSlide=(event: any) => {
-            console.log(event.from, "---", event.to)
-            setSelected (event.to)
+        const handleSlide = (event: Event) => {
+            const customEvent = event as any
+            setSelected(customEvent.to)
         }
 
         if (myCarousel) {
