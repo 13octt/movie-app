@@ -1,4 +1,3 @@
-import React from 'react'
 import HomeSlider from '../../components/Home/HomeSlider'
 
 function Home() {

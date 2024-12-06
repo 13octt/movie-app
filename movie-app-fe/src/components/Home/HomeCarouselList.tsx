@@ -8,7 +8,7 @@ interface HomeCarouselListProps {
 }
 
 function HomeCarouselList({ next, carouselMovies }: HomeCarouselListProps) {
-    console.log(next)
+    console.log(`next: ` + next)
     return (
         <div>
             <h1 className='text-yellow-500 font-bold text-xl'>Up next</h1>

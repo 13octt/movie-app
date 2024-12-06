@@ -6,8 +6,38 @@ import HomeCarouselList from './HomeCarouselList';
 
 function HomeSlider() {
 
-    const [carouselMovies, setCarouselMovies] = useState<CarouselMovie[]>([])
-    const [nextMovie, setNextMovie] = useState<number[]>([1, 2, 3])
+    const [carouselMovies, setCarouselMovies] = useState<CarouselMovie[]>([]);
+    const [nextMovie, setNextMovie] = useState<number[]>([]);
+    const [selected, setSelected] = useState(0);
+
+    console.log(carouselMovies.length);
+
+
+    useEffect(() => {
+        if (carouselMovies.length) {
+            const index1 = (selected + 1) % carouselMovies.length;
+            const index2 = (selected + 2) % carouselMovies.length;
+            const index3 = (selected + 3) % carouselMovies.length;
+            setNextMovie([index1, index2, index3]);
+        }
+    }, [carouselMovies, selected]);
+
+    useEffect(() => {
+        const myCarousel = document.getElementById("carouselExample")
+
+        const handleSlide=(event: any) => {
+            console.log(event.from, "---", event.to)
+            setSelected (event.to)
+        }
+
+        if (myCarousel) {
+            myCarousel.addEventListener('slid.bs.carousel', handleSlide)
+        }
+
+        return () => {
+            myCarousel?.removeEventListener('slid.bs.carousel', handleSlide)
+        }
+    })
 
     const fetchUpcoming = async () => {
         try {
@@ -35,7 +65,7 @@ function HomeSlider() {
             </div>
 
             <div className="col-4">
-                <HomeCarouselList next = {nextMovie} carouselMovies={carouselMovies} />
+                <HomeCarouselList next={nextMovie} carouselMovies={carouselMovies} />
             </div>
         </div>
     )
