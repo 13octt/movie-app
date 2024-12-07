@@ -62,14 +62,14 @@ function Movies() {
 
 	return (
 		<div className="w-[90%] mx-auto mt-4">
-			<h1 className="text-3xl font-bold text-yellow-500">Explore Movies</h1>
-			<div className="flex mt-2">
+			<h1 className="md:text-3xl sm:text-2xl text-xl font-bold text-yellow-500">Explore Movies</h1>
+			<div className="flex flex-wrap mt-2">
 				{
 					category.map((item, ind) => (
 						<div key={ind}>
 							<button
 								onClick={() => { toggleSelection(item.name) }}
-								className="text-base font-semibold w-44 h-10 hover:bg-[#121212]">{item.name}</button>
+								className="md:text-base sm:text-sm text-xs font-semibold lg:w-44 md:w-40 sm:w-36 h-10 p-2 hover:bg-[#121212]">{item.name}</button>
 							<div className={`h-0.5 bg-blue-400  mx-auto ${filter === item.name ? "w-full" : "w-0"} duration-500`}></div>
 						</div>
 					))

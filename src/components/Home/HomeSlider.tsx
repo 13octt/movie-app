@@ -53,15 +53,14 @@ function HomeSlider() {
 
     return (
         <div className="row">
-            <div className='relative col-8'>
-
-                <div id="carouselExample" className="carousel slide">
+            <div className='relative col-xl-8'>
+                <div id="carouselExample" className="carousel slide h-full">
                     <HomeCarousel carouselMovies={carouselMovies} />
 
                 </div>
             </div>
 
-            <div className="col-4">
+            <div className="col-xl-4 lg:block hidden">
                 <HomeCarouselList next={nextMovie} carouselMovies={carouselMovies} />
             </div>
         </div>
