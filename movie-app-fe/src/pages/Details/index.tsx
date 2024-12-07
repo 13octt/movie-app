@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { baseApi } from "../../api/axiosInstance";
 import { imagepath, MovieDetailType } from "../../utils/constant";
+import Trailers from "../../components/MovieDetails/Trailers";
+import SimilarMovie from "../../components/MovieDetails/SimilarMovie";
 
 function Details() {
 	const params = useParams()
@@ -19,7 +21,7 @@ function Details() {
 
 	return (
 		<div>
-			{details &&
+			{details && params.id &&
 				<div className="relative h-fit w-full">
 					<div className="relative">
 						<img src={imagepath + details?.backdrop_path}
@@ -46,10 +48,11 @@ function Details() {
 											<h2>Original Language: {details?.original_language}</h2>
 											<h2>Release Date: {details?.release_date}</h2>
 										</div>
-
 									</div>
 								</div>
 							</div>
+							<Trailers movieId={params.id} />
+							<SimilarMovie movieId={params.id}/>
 						</div>
 					</div>
 				</div>

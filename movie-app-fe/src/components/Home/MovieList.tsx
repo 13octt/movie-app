@@ -12,8 +12,8 @@ function MovieList({ movies, title }: MovieListProps) {
 			<h1 className="text-3xl font-bold text-yellow-500 my-3">{title}</h1>
 			<div className="row row-cols-6">
 				{
-					movies.length > 0 && movies.map((data, index) => (
-						<MovieCard key={index} movieData={data} />
+					movies.length > 0 && movies.map((data, ind) => (
+						<MovieCard key={ind} movieData={data} />
 					))
 				}
 			</div>

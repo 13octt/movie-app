@@ -65,8 +65,8 @@ function Movies() {
 			<h1 className="text-3xl font-bold text-yellow-500">Explore Movies</h1>
 			<div className="flex mt-2">
 				{
-					category.map((item, index) => (
-						<div key={index}>
+					category.map((item, ind) => (
+						<div key={ind}>
 							<button
 								onClick={() => { toggleSelection(item.name) }}
 								className="text-base font-semibold w-44 h-10 hover:bg-[#121212]">{item.name}</button>

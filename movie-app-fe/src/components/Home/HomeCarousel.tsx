@@ -10,9 +10,9 @@ function HomeCarousel({ carouselMovies }: HomeCarouselProps) {
     return (
         <div className="carousel-inner">
             {
-                carouselMovies.map((movie, index) => (
+                carouselMovies.map((movie, ind) => (
 
-                    <div key={index} className={`carousel-item ${index == 0 ? "active" : ""}  `}>
+                    <div key={ind} className={`carousel-item ${ind == 0 ? "active" : ""}  `}>
                         {
                             <div>
                                 <div className="relative ">

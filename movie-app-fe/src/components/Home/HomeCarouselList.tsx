@@ -14,15 +14,15 @@ function HomeCarouselList({ next, carouselMovies }: HomeCarouselListProps) {
         <div>
             <h1 className='text-yellow-500 font-bold text-xl'>Up next</h1>
             {
-                next.map((item, index) => (
-                    <div key={index} className="flex gap-2"
-                        onMouseEnter={() => setHover(index)}
+                next.map((item, ind) => (
+                    <div key={ind} className="flex gap-2"
+                        onMouseEnter={() => setHover(ind)}
                         onMouseLeave={() => setHover(null)}
                     >
                         <img src={imagepath + carouselMovies[item]?.poster_path} className="w-[100px]" alt="" />
                         <div className="flex flex-col justify-between py-2">
                             <div className="leading-5">
-                                <h1 className={`${hover === index ? "underline" : ""}`}>{carouselMovies[item]?.title}</h1>
+                                <h1 className={`${hover === ind ? "underline" : ""}`}>{carouselMovies[item]?.title}</h1>
                                 <h1 className="text-md text-zinc-300 line-clamp-3">{carouselMovies[item]?.overview}</h1>
                             </div>
                             <div className="flex gap-1 text-center ">
