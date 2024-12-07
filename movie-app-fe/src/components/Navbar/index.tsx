@@ -57,7 +57,7 @@ function Navbar() {
                         <button className="text-[18px] text-yellow-500 hover:underline">EXPLORE</button>
                     </Link>
                 </div>
-                <div className="">
+                <div className="relative">
                     <input
                         placeholder="search"
                         onChange={handleChange}
@@ -65,31 +65,26 @@ function Navbar() {
                         onClick={() => toggleShow(true)}
                         className="w-[500px] h-10 bg-black text-[#c2c2c2] text-lg outline-none px-4 placeholder:text-[#646464] rounded-xl"
                         type="text" />
-                    <div className="relative">
-                        <div className="absolute z-10 left-0 w-full h-[200px]  rounded-xl">
-                            {
-                                showSearch && search.length > 0 &&
-                                <div className="absolute z-30 top-2 right-1 text-yellow-500 sm:text-2xl text-xl"
-                                    onClick={() => toggleShow(false)}
-                                ><IoClose /></div>
-                            }
-                            {
-                                showSearch && search.length > 0 && <div className="relative" onClick={() => toggleShow(false)}>
-                                    <div className="sm:absolute fixed z-50 left-0 sm:max-w-[500px] w-full bg-zinc-800 rounded-xl">
-                                        <div className="py-3 pl-5">
-                                            <div className="flex flex-col gap-2 h-fit max-h-[380px] overflow-y-auto">
-                                                {searchedList.length > 0 && searchedList.map((item, ind) =>
-                                                    <CarouselMiniCard carouselMovies={searchedList} ind={ind} item={ind} />
-                                                )}
-                                            </div>
-                                        </div>
+                    {
+                        showSearch && search.length > 0 &&
+                        <div className="absolute z-30 top-2 right-1 text-yellow-500 sm:text-2xl text-xl"
+                            onClick={() => toggleShow(false)}
+                        ><IoClose /></div>
+                    }
+                    {
+                        showSearch && search.length > 0 && <div className="relative" onClick={() => toggleShow(false)}>
+                            <div className="sm:absolute fixed z-50 left-0 sm:max-w-[500px] w-full bg-zinc-800 rounded-xl">
+                                <div className="py-3 pl-5">
+                                    <div className="flex flex-col gap-2 h-fit max-h-[380px] overflow-y-auto">
+                                        {searchedList.length > 0 && searchedList.map((item, ind) =>
+                                            <CarouselMiniCard carouselMovies={searchedList} ind={ind} item={ind} />
+                                        )}
                                     </div>
                                 </div>
-                            }
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
-
             </div>
         </nav>
     )
