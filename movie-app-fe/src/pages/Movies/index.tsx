@@ -22,7 +22,7 @@ function Movies() {
 
 	const fetchMovies = async (path: string, pages: number) => {
 		try {
-			const response = await baseApi.get(`/3/movie/${path}?language=en-US&${pages}`)
+			const response = await baseApi.get(`/3/movie/${path}?language=en-US&page=${pages}`)
 			console.log(path)
 			switch (path) {
 				case "now_playing":
